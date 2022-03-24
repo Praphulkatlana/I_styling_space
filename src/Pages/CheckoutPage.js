@@ -7,16 +7,7 @@ const CheckoutPage = () => {
   const MyCart = React.useContext(CartContext);
   const { addToast } = useToasts();
   const [Total, setTotal] = useState(0);
-  console.log(MyCart);
-  // const AddToCart = (item) => {
-  //   MyCart.dispatch({ type: "add", item });
-  //   addToast("Item Added Successfully", {
-  //     appearance: "success",
-  //     autoDismiss: true,
-  //     autoDismissTimeout: 1500,
-  //   });
-  // };
-
+  
   const RemoveFromCart = (item) => {
     MyCart.dispatch({ type: "remove", id: item.id });
     addToast("Item Remove Successfully", {

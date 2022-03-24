@@ -11,6 +11,7 @@ import ProductPage from "./Pages/ProductPage";
 import reducer from "./Store/StoreReducer";
 import { ToastProvider } from "react-toast-notifications";
 import CheckoutPage from "./Pages/CheckoutPage";
+import FooterPage from "./Pages/FooterPage";
 
 export const CartContext = createContext();
 const initalCart = [];
@@ -37,6 +38,7 @@ const App = () => {
               <Route path="*" element={<Home />} />
             </Routes>
           </div>
+          <FooterPage />
         </ToastProvider>
       </CartContext.Provider>
     </Router>
