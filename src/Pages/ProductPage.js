@@ -9,7 +9,6 @@ const ProductPage = () => {
   const params = useParams();
   const [product, setproduct] = useState({});
   const getproduct = async () => {
-    console.log(params.id);
 
     const docRef = doc(db, "all", params.id);
     let item = await getDoc(docRef);

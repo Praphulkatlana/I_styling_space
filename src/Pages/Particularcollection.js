@@ -14,7 +14,6 @@ function Particularcollection() {
     let allSnapshot = await getDocs(collection(db, params.id));
     let allDocs = allSnapshot.docs.map((doc) => doc.data());
     setcollectionItems([...allDocs]);
-    console.log(collectionItems);
   };
 
   return (

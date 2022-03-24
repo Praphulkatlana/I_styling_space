@@ -14,7 +14,9 @@ import CheckoutPage from "./Pages/CheckoutPage";
 import FooterPage from "./Pages/FooterPage";
 
 export const CartContext = createContext();
-const initalCart = [];
+const initalCart = {isLogin:false,
+products:[]
+};
 
 const App = () => {
   const [CartItems, dispatch] = useReducer(reducer, initalCart);

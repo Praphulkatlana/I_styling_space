@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useToasts } from "react-toast-notifications";
 
 const CheckoutPage = () => {
+  
   const MyCart = React.useContext(CartContext);
   const { addToast } = useToasts();
   const [Total, setTotal] = useState(0);
@@ -20,7 +21,7 @@ const CheckoutPage = () => {
 
   const Calculate_total = () => {
     let sum = 0;
-    MyCart.Cart.map((item) => (sum = sum + parseInt(item.price)));
+    MyCart.Cart.products.map((item) => (sum = sum + parseInt(item.price)));
     setTotal(sum);
   };
   useEffect(() => {
@@ -29,7 +30,7 @@ const CheckoutPage = () => {
 
   return (
     <div>
-      {MyCart.Cart.map((item) => {
+      {MyCart.Cart.products.map((item) => {
         return (
           <div id="checkout_div">
             <div id="checkout_div_items">

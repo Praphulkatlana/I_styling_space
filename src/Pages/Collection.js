@@ -68,6 +68,10 @@ const Collection = () => {
   const { addToast } = useToasts();
 
   const AddToCart = (item) => {
+   if (MyCart.Cart.isLogin===false){
+     return (alert("Pleas login first"))
+     
+   }
     MyCart.dispatch({ type: "add", item });
     addToast("Item Added Successfully", {
       appearance: "success",

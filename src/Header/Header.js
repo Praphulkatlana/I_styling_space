@@ -31,12 +31,12 @@ const Header = () => {
 
             <li>
               <Link to="/signin" className="HeaderLink">
-                Signin
+                {MyCart.Cart.isLogin?"SignOut":"SignIn"}
               </Link>
             </li>
           </ul>
           <div id="cart">
-            {MyCart.Cart.length > 0 && <label>{MyCart.Cart.length}</label>}
+            {MyCart.Cart.products.length > 0 && <label>{MyCart.Cart.products.length}</label>}
 
             <Link to="/checkout" className="HeaderLink">
               <svg
