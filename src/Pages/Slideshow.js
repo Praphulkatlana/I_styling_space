@@ -7,7 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 const Slideshow = () => {
   const [slideImages, setslideImages] = useState([]);
   const getData = async () => {
-    const allSnapshot = await getDocs(collection(db, "all"));
+    const allSnapshot = await getDocs(collection(db, "All"));
     const allDocs = allSnapshot.docs.map((doc) => doc.data().url);
     setslideImages([...allDocs]);
     return null;

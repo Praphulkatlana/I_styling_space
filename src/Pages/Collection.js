@@ -14,23 +14,23 @@ const Collection = () => {
   const [womens, setwomens] = useState([]);
   const [mix, setmix] = useState([]);
   const getData = async () => {
-    let allSnapshot = await getDocs(collection(db, "latest"));
+    let allSnapshot = await getDocs(collection(db, "Latest"));
     let allDocs = allSnapshot.docs.map((doc) => doc.data());
     setlatest([...allDocs]);
 
-    allSnapshot = await getDocs(collection(db, "children"));
+    allSnapshot = await getDocs(collection(db, "Children"));
     allDocs = allSnapshot.docs.map((doc) => doc.data());
     setchildren([...allDocs]);
 
-    allSnapshot = await getDocs(collection(db, "mens"));
+    allSnapshot = await getDocs(collection(db, "Mens"));
     allDocs = allSnapshot.docs.map((doc) => doc.data());
     setmens([...allDocs]);
 
-    allSnapshot = await getDocs(collection(db, "women"));
+    allSnapshot = await getDocs(collection(db, "Womens"));
     allDocs = allSnapshot.docs.map((doc) => doc.data());
     setwomens([...allDocs]);
 
-    allSnapshot = await getDocs(collection(db, "mix"));
+    allSnapshot = await getDocs(collection(db, "Mix"));
     allDocs = allSnapshot.docs.map((doc) => doc.data());
     setmix([...allDocs]);
 
@@ -68,10 +68,13 @@ const Collection = () => {
   const { addToast } = useToasts();
 
   const AddToCart = (item) => {
-   if (MyCart.Cart.isLogin===false){
-     return (alert("Pleas login first"))
-     
-   }
+    if (MyCart.Cart.isLogin === false) {
+      return addToast("Pleas login first", {
+        appearance: "warning",
+        autoDismiss: true,
+        autoDismissTimeout: 1500,
+      });
+    }
     MyCart.dispatch({ type: "add", item });
     addToast("Item Added Successfully", {
       appearance: "success",

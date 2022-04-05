@@ -12,11 +12,10 @@ import reducer from "./Store/StoreReducer";
 import { ToastProvider } from "react-toast-notifications";
 import CheckoutPage from "./Pages/CheckoutPage";
 import FooterPage from "./Pages/FooterPage";
+import Admin_page from "./Pages/Admin_page";
 
 export const CartContext = createContext();
-const initalCart = {isLogin:false,
-products:[]
-};
+const initalCart = { isLogin: false, products: [] };
 
 const App = () => {
   const [CartItems, dispatch] = useReducer(reducer, initalCart);
@@ -29,6 +28,7 @@ const App = () => {
             <Header />
             <Routes>
               <Route extact path="/signin" element={<Signin />} />
+              <Route extact path="/admin" element={<Admin_page />} />
               <Route extact path="/collection" element={<Collection />} />
               <Route extact path="/contact" element={<Contact />} />
               <Route extact path="/checkout" element={<CheckoutPage />} />

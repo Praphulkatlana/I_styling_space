@@ -9,12 +9,10 @@ const ProductPage = () => {
   const params = useParams();
   const [product, setproduct] = useState({});
   const getproduct = async () => {
-
-    const docRef = doc(db, "all", params.id);
+    const docRef = doc(db, "All", params.id);
     let item = await getDoc(docRef);
     item = item.data();
     if (item !== undefined) {
-      console.log("if");
       setproduct(item);
     } else {
       setproduct({});
@@ -54,7 +52,7 @@ const ProductPage = () => {
           </div>
           <div id="product_page_right_div">
             <div id="product_page_right_div_items">
-              <p>{product.details}</p>
+              <p className="white_text">{product.details}</p>
               <h1>{product.price ? `$${product.price}` : ""}</h1>
               {product && (
                 <button

@@ -10,7 +10,7 @@ const Home = () => {
   const MyCart = React.useContext(CartContext);
   const [Items, setItems] = useState([]);
   const getData = async () => {
-    const allSnapshot = await getDocs(collection(db, "all"));
+    const allSnapshot = await getDocs(collection(db, "All"));
     const allDocs = allSnapshot.docs.map((doc) => doc.data());
     setItems([...allDocs]);
     return null;
@@ -26,11 +26,12 @@ const Home = () => {
         <Slideshow />
       </div>
       <div id="home_items">
-        {Items.map((item) => {
+        {Items.slice(0, 9).map((item) => {
+          console.log(item);
           return (
             <div id="item_div">
               <Link to={`/product/${item.id}`} className="CollectionLink">
-                <img src={item.url} alt="phooto" className="enlarge_on_hover" />
+                <img src={item.url} alt="photo" className="enlarge_on_hover" />
               </Link>
             </div>
           );
