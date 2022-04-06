@@ -72,6 +72,7 @@ const Signin = () => {
         });
       });
 
+    // to create user as an admin
     // const auth = getAuth();
     // createUserWithEmailAndPassword(auth, email, password)
     //   .then((userCredential) => {

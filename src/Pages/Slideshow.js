@@ -22,7 +22,7 @@ const Slideshow = () => {
         <div id="carousel_img_div">
           <img
             className="Carousel_img"
-            src={slideImages[0]}
+            src={slideImages[Math.floor(Math.random() * slideImages.length)]}
             alt="First slide"
           />
         </div>
@@ -31,7 +31,7 @@ const Slideshow = () => {
         <div id="carousel_img_div">
           <img
             className="Carousel_img"
-            src={slideImages[1]}
+            src={slideImages[Math.floor(Math.random() * slideImages.length)]}
             alt="First slide"
           />{" "}
         </div>
@@ -40,7 +40,7 @@ const Slideshow = () => {
         <div id="carousel_img_div">
           <img
             className="Carousel_img"
-            src={slideImages[2]}
+            src={slideImages[Math.floor(Math.random() * slideImages.length)]}
             alt="First slide"
           />{" "}
         </div>
@@ -49,7 +49,7 @@ const Slideshow = () => {
         <div id="carousel_img_div">
           <img
             className="Carousel_img"
-            src={slideImages[3]}
+            src={slideImages[Math.floor(Math.random() * slideImages.length)]}
             alt="First slide"
           />
         </div>
@@ -58,7 +58,7 @@ const Slideshow = () => {
         <div id="carousel_img_div">
           <img
             className="Carousel_img"
-            src={slideImages[4]}
+            src={slideImages[Math.floor(Math.random() * slideImages.length)]}
             alt="First slide"
           />{" "}
         </div>
@@ -67,7 +67,7 @@ const Slideshow = () => {
         <div id="carousel_img_div">
           <img
             className="Carousel_img"
-            src={slideImages[5]}
+            src={slideImages[Math.floor(Math.random() * slideImages.length)]}
             alt="First slide"
           />{" "}
         </div>

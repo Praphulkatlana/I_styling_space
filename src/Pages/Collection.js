@@ -14,7 +14,7 @@ const Collection = () => {
   const [womens, setwomens] = useState([]);
   const [mix, setmix] = useState([]);
   const getData = async () => {
-    let allSnapshot = await getDocs(collection(db, "Latest"));
+    let allSnapshot = await getDocs(collection(db, "latest"));
     let allDocs = allSnapshot.docs.map((doc) => doc.data());
     setlatest([...allDocs]);
 
@@ -47,20 +47,20 @@ const Collection = () => {
       items: latest.slice(0, 5),
     },
     {
-      title: "children",
+      title: "Children",
       items: children.slice(0, 5),
     },
 
     {
-      title: "women",
+      title: "Womens",
       items: womens.slice(0, 5),
     },
     {
-      title: "mens",
+      title: "Mens",
       items: mens.slice(0, 5),
     },
     {
-      title: "mix",
+      title: "Mix",
       items: mix.slice(0, 5),
     },
   ];
@@ -89,10 +89,7 @@ const Collection = () => {
           <div id="collectionItem_div">
             <div id="collectionItem_div_1">
               <h1>{collectionItem.title}</h1>
-              <button
-                className="collection_btn"
-                // onClick={() => ViewAllCollection(collectionItem.title)}
-              >
+              <button className="collection_btn">
                 <Link
                   to={`/collection/${collectionItem.title}`}
                   className="CollectionLink"

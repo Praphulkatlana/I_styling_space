@@ -26,8 +26,7 @@ const Home = () => {
         <Slideshow />
       </div>
       <div id="home_items">
-        {Items.slice(0, 9).map((item) => {
-          console.log(item);
+        {Items.slice(0, 8).map((item) => {
           return (
             <div id="item_div">
               <Link to={`/product/${item.id}`} className="CollectionLink">

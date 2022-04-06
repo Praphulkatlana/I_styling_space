@@ -10,7 +10,6 @@ function Particularcollection() {
     getData();
   }, []);
   const getData = async () => {
-    console.log(params.id);
     let allSnapshot = await getDocs(collection(db, params.id));
     let allDocs = allSnapshot.docs.map((doc) => doc.data());
     setcollectionItems([...allDocs]);
