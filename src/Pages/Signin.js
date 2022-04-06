@@ -30,7 +30,7 @@ const Signin = () => {
       return MyCart.dispatch({ type: "signout", item: false });
     }
     signInWithPopup(auth, provider)
-      .then((res) => {
+      .then(() => {
         addToast("Sign In Successfully", {
           appearance: "success",
           autoDismiss: true,

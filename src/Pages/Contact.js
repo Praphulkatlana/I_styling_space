@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import emailkey from "../emailkey";
 import emailjs from "emailjs-com";
+import { useToasts } from "react-toast-notifications";
+
 const Contact = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [number, setnumber] = useState("");
   const [message, setmessage] = useState("");
+  const { addToast } = useToasts();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,14 +21,23 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          alert("Message Sent, We will get back to you shortly", result.text);
+          addToast("Message Sent, We will get back to you shortly", {
+            appearance: "success",
+            autoDismiss: true,
+            autoDismissTimeout: 4000,
+          });
+
           setname("");
           setemail("");
           setmessage("");
           setnumber("");
         },
         (error) => {
-          alert("An error occurred, Please try again", error.text);
+          addToast("An error occurred, Please try again", {
+            appearance: "success",
+            autoDismiss: true,
+            autoDismissTimeout: 4000,
+          });
         }
       );
   };
