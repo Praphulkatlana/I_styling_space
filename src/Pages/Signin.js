@@ -39,13 +39,15 @@ const Signin = () => {
         MyCart.dispatch({ type: "signin", item: true });
         return navigate("/", { replace: true });
       })
-      .catch((er) =>
+      .catch((er) => {
+        alert(er.message);
+        console.log(er.message);
         addToast(er.message, {
           appearance: "error",
           autoDismiss: true,
           autoDismissTimeout: 4000,
-        })
-      );
+        });
+      });
   };
   const adminFormToggle = () => {
     setadminForm(true);
