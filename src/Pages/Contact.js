@@ -8,6 +8,9 @@ const Contact = () => {
   const [message, setmessage] = useState("");
 
   const sendEmail = (e) => {
+    console.log("send");
+    console.log(process.env.REACT_APP_EMAIL_USER_ID);
+    console.log(emailkey.USER_ID);
     e.preventDefault();
     emailjs
       .sendForm(
