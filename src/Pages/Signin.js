@@ -40,8 +40,6 @@ const Signin = () => {
         return navigate("/", { replace: true });
       })
       .catch((er) => {
-        alert(er.message);
-        console.log(er.message);
         addToast(er.message, {
           appearance: "error",
           autoDismiss: true,
