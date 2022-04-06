@@ -4,7 +4,7 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
-  authDomain: "style-store-bckup.web.app",
+  authDomain: "style-store-bckup.firebaseapp.com",
   projectId: "style-store-bckup",
   storageBucket: "style-store-bckup.appspot.com",
   messagingSenderId: "297982593436",
